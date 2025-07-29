@@ -25,12 +25,12 @@ function ListSection({ title, items, minWidth = 'min-w-[250px]' }) {
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-[#1A202C] border-t border-[#374151] relative">
+        <footer className="w-full bg-[#F3F4F6] dark:bg-[#1A202C] border-t border-[#E5E7EB] dark:border-[#374151] relative">
             <div className="max-w-7xl mx-auto px-2 py-8 flex flex-wrap gap-8 justify-between">
                 {/* Brand and Tagline */}
                 <div className="min-w-[250px] mb-8">
-                    <div className="text-[#F9FAFB] text-4xl font-bold font-poppins leading-7">Codevia Crew</div>
-                    <div className="text-[#9CA3AF] text-sm font-poppins leading-5 mt-3">Innovative solutions for a digital world.</div>
+                    <div className="text-[#232B3A] dark:text-[#F9FAFB] text-4xl font-bold font-poppins leading-7">Codevia Crew</div>
+                    <div className="text-[#6B7280] dark:text-[#9CA3AF] text-sm font-poppins leading-5 mt-3">Innovative solutions for a digital world.</div>
                 </div>
                 {/* Navigation */}
                 <ListSection
@@ -54,9 +54,9 @@ export default function Footer() {
                 {/* Follow Us */}
                 <ListSection title="Follow Us" items={[]} minWidth="min-w-[150px]" />
             </div>
-            <div className="border-t border-[#374151] w-full">
+            <div className="border-t border-[#E5E7EB] dark:border-[#374151] w-full">
                 <div className="max-w-7xl mx-auto px-4 py-4 flex justify-center">
-                    <span className="text-[#9CA3AF] text-sm font-poppins leading-5">© Codevia Crew . All rights reserved.</span>
+                    <span className="text-[#6B7280] dark:text-[#9CA3AF] text-sm font-poppins leading-5">© Codevia Crew . All rights reserved.</span>
                 </div>
             </div>
         </footer>
