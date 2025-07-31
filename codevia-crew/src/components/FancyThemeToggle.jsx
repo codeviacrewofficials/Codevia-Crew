@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from './ThemeProvider';
+import { useTheme } from '@/components/ThemeProvider';
 
 
 // Scaled down SVGs for Navbar (width: 64, height: 24)
