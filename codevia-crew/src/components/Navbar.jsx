@@ -8,21 +8,34 @@ import FancyThemeToggle from './FancyThemeToggle';
 export default function Navbar() {
   const { dark, setDark } = useTheme();
   return (
-    <div className={`w-full px-10 py-3 border-b border-[#232B3A] flex justify-between items-center ${dark ? 'bg-[#1A202C]' : 'bg-white'}`}>
+    <div className={`w-full px-4 py-1 border-b border-[#232B3A] flex justify-between items-center ${dark ? 'bg-[#1A202C]' : 'bg-white'}`}>
       {/* Logo and Brand */}
-      <div className="flex items-center gap-4">
-        <div className="relative w-4 h-4 overflow-hidden">
-          <div className="absolute top-0 left-0 w-4 h-4 bg-white" />
+      <div className="flex items-center gap-2">
+        <div className="relative w-14 h-14">
+          {/* Light logo */}
+          <img
+            src="/images/Logo/logo_light.svg"
+            alt="Codevia Crew Logo"
+            className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${dark ? 'opacity-0' : 'opacity-100'}`}
+            draggable={false}
+          />
+          {/* Dark logo */}
+          <img
+            src="/images/Logo/logo_dark.png"
+            alt="Codevia Crew Logo"
+            className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${dark ? 'opacity-100' : 'opacity-0'}`}
+            draggable={false}
+          />
         </div>
         <div>
-          <span className="text-white text-lg font-bold">Codevia Crew</span>
+          <span className={`${dark ? "text-white" : "text-[#232B3A]"} text-lg font-bold`}>Codevia Crew</span>
         </div>
       </div>
 
       {/* Navigation Links */}
-      <div className="flex-1 justify-end flex gap-8 items-center">
+      <div className="flex-1 justify-end flex gap-x-8 items-center">
         {/* Theme Toggle */}
-        <div className="flex items-center mr-6">
+        <div className="flex items-center ">
           <FancyThemeToggle />
         </div>
         <div className="flex gap-9 items-center h-10">
@@ -62,3 +75,4 @@ export default function Navbar() {
     </div>
   );
 }
+

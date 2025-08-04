@@ -1,7 +1,6 @@
 "use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
 import { useState } from "react";
 
 
@@ -98,7 +97,6 @@ export default function Services() {
   const tab = SERVICE_TABS.find((t) => t.key === activeTab);
 
   return (
-    <ThemeProvider>
       <div className="w-full min-h-screen flex flex-col bg-[#F9FAFB] dark:bg-[#121417]">
         <Navbar />
         <main className="flex flex-col items-center w-full px-0 py-10">
@@ -443,6 +441,5 @@ export default function Services() {
         </main>
         <Footer />
       </div>
-    </ThemeProvider>
   );
 }

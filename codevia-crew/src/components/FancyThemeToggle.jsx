@@ -5,7 +5,7 @@ import { useTheme } from '@/components/ThemeProvider';
 // Scaled down SVGs for Navbar (width: 64, height: 24)
 function LightToggleSVG() {
   return (
-    <svg width="80" height="40" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="60" height="30" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="160" height="80" rx="40" fill="#3A8DCA" />
       {/* Clouds on the right, more visible */}
       <ellipse cx="140" cy="20" rx="15" ry="15" fill="white" fillOpacity="0.45" />
@@ -21,7 +21,7 @@ function LightToggleSVG() {
 
 function DarkToggleSVG() {
   return (
-    <svg width="80" height="40" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="60" height="30" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="160" height="80" rx="40" fill="#1B1D2A" />
       {/* Stars */}
       <circle cx="40" cy="20" r="2" fill="white" />
@@ -40,8 +40,8 @@ export default function FancyThemeToggle() {
   return (
     <button
       aria-label="Toggle Theme"
-      className="relative w-15 h-8 flex items-center rounded-full transition-colors duration-300 focus:outline-none border-none bg-transparent p-0"
-      style={{ minWidth: 80, minHeight: 40 }}
+      className="relative w-10 h-4 flex items-center rounded-full transition-colors duration-300 focus:outline-none border-none bg-transparent p-0"
+      style={{ minWidth: 80, minHeight: 30 }}
       onClick={() => setDark((d) => !d)}
     >
       {/* Track SVG */}
@@ -50,9 +50,9 @@ export default function FancyThemeToggle() {
       </span>
       {/* Animated thumb (sun/moon) */}
       <span
-        className="absolute top-1 left-1 w-8 h-8 rounded-full shadow-lg transition-transform duration-500"
+        className="absolute top-0.5 left-1 w-6 h-6 rounded-full shadow-lg transition-transform duration-500"
         style={{
-          transform: dark ? 'translateX(40px)' : 'translateX(0px)',
+          transform: dark ? 'translateX(28px)' : 'translateX(0px)',
           background: dark ? '#C4C9D2' : '#FED62E',
           display: 'flex',
           alignItems: 'center',
