@@ -57,66 +57,63 @@ const results = [
 
 export default function CaseStudyPage() {
   return (
-    <div style={{ background: "#121417", minHeight: "100vh" }}>
+    <div className="bg-white dark:bg-[#121417] min-h-screen">
       <Navbar />
-      <div className="flex justify-end p-4">
-        <FancyThemeToggle />
-      </div>
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="mb-4 text-gray-400 flex gap-2">
+        <div className="mb-4 text-[#697582] dark:text-gray-400 flex gap-2">
           <span>Work</span>
           <span>/</span>
-          <span className="text-white">Client Success Story</span>
+          <span className="text-[#121417] dark:text-white">Client Success Story</span>
         </div>
-        <Title level={2} style={{ color: "#fff" }}>Client Success Story</Title>
-        <Card className="my-6" style={{ background: "#1f2124", borderRadius: 16 }}>
-          <Title level={3} style={{ color: "#fff" }}>Project Overview</Title>
-          <Paragraph style={{ color: "#fff" }}>
+        <Title level={2} className="text-[#121417] dark:text-white">Client Success Story</Title>
+        <Card className="my-6 bg-white dark:bg-[#1f2124] border border-[#dee0e3] dark:border-[#232B3A] rounded-2xl">
+          <Title level={3} className="text-[#121417] dark:text-white">Project Overview</Title>
+          <Paragraph className="text-[#121417] dark:text-white">
             We partnered with a leading tech startup to revamp their user interface, focusing on enhancing user engagement and streamlining the user journey. Our team conducted extensive user research, developed wireframes, and implemented a responsive design strategy to ensure a seamless experience across all devices.
           </Paragraph>
         </Card>
-        <Title level={3} style={{ color: "#fff" }}>Design Process</Title>
+        <Title level={3} className="text-[#121417] dark:text-white">Design Process</Title>
         <div className="my-6">
           <Steps
             direction="vertical"
             current={3}
             items={steps.map((step) => ({
-              title: <span style={{ color: "#fff" }}>{step.title}</span>,
-              description: <span style={{ color: "#a3abb2" }}>{step.description}</span>,
+              title: <span className="text-[#121417] dark:text-white">{step.title}</span>,
+              description: <span className="text-[#697582] dark:text-[#a3abb2]">{step.description}</span>,
             }))}
-            style={{ color: "#fff" }}
+            className="text-[#121417] dark:text-white"
           />
         </div>
-        <Title level={3} style={{ color: "#fff" }}>Key Features</Title>
+        <Title level={3} className="text-[#121417] dark:text-white">Key Features</Title>
         <Row gutter={16} className="my-6">
           {features.map((feature) => (
             <Col xs={24} md={8} key={feature.title}>
-              <Card style={{ background: "#1f2124", borderRadius: 12, color: "#fff" }}>
-                <Title level={4} style={{ color: "#fff" }}>{feature.title}</Title>
+              <Card className="bg-white dark:bg-[#1f2124] border border-[#dee0e3] dark:border-[#232B3A] rounded-lg">
+                <Title level={4} className="text-[#121417] dark:text-white">{feature.title}</Title>
               </Card>
             </Col>
           ))}
         </Row>
-        <Title level={3} style={{ color: "#fff" }}>Results</Title>
+        <Title level={3} className="text-[#121417] dark:text-white">Results</Title>
         <Row gutter={16} className="my-6">
           {results.map((result) => (
             <Col xs={24} md={8} key={result.label}>
-              <Card style={{ background: "#1f2124", borderRadius: 12, color: result.color }}>
-                <Title level={4} style={{ color: "#fff" }}>{result.label}</Title>
-                <Paragraph style={{ color: result.color, fontSize: 24, fontWeight: 700 }}>{result.value}</Paragraph>
+              <Card className="bg-white dark:bg-[#1f2124] border border-[#dee0e3] dark:border-[#232B3A] rounded-lg">
+                <Title level={4} className="text-[#121417] dark:text-white">{result.label}</Title>
+                <Paragraph className="text-[#088738] dark:text-[#0ad95c] text-2xl font-bold">{result.value}</Paragraph>
               </Card>
             </Col>
           ))}
         </Row>
-        <Title level={3} style={{ color: "#fff" }}>Client Testimonial</Title>
-        <Card className="my-6" style={{ background: "#1f2124", borderRadius: 16 }}>
-          <Paragraph style={{ color: "#fff", fontSize: 20, fontWeight: 600 }}>
+        <Title level={3} className="text-[#121417] dark:text-white">Client Testimonial</Title>
+        <Card className="my-6 bg-white dark:bg-[#1f2124] border border-[#dee0e3] dark:border-[#232B3A] rounded-2xl">
+          <Paragraph className="text-[#121417] dark:text-white text-xl font-semibold">
             "The new design has significantly improved our user experience and boosted our conversion rates. The team at Nova Designs was professional, creative, and delivered exceptional results."
           </Paragraph>
-          <Paragraph style={{ color: "#fff" }}>Sarah Chen, CEO of Innovatech Solutions</Paragraph>
+          <Paragraph className="text-[#121417] dark:text-white">Sarah Chen, CEO of Innovatech Solutions</Paragraph>
         </Card>
       </div>
-      <footer className="text-center text-gray-400 py-8">@2024 Nova Designs. All rights reserved.</footer>
+      <footer className="text-center text-[#697582] dark:text-gray-400 py-8">@2024 Nova Designs. All rights reserved.</footer>
     </div>
   );
 }
