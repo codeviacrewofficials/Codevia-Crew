@@ -45,6 +45,12 @@ export default function Navbar() {
               <span className={`absolute left-0 -bottom-1 w-full h-0.5 ${dark ? 'bg-white' : 'bg-[#232B3A]'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
             </span>
           </Link>
+          <Link href="/portfolio">
+            <span className={`text-sm font-medium cursor-pointer relative group ${dark ? 'text-white' : 'text-[#232B3A]'}`}>
+              Portfolio
+              <span className={`absolute left-0 -bottom-1 w-full h-0.5 ${dark ? 'bg-white' : 'bg-[#232B3A]'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
+            </span>
+          </Link>
           <Link href="/case-studies">
             <span className={`text-sm font-medium cursor-pointer relative group ${dark ? 'text-white' : 'text-[#232B3A]'}`}>
               Case Studies
