@@ -1,7 +1,6 @@
 'use client';
 import React from "react";
 import Navbar from "@/components/Navbar";
-import FancyThemeToggle from "@/components/FancyThemeToggle";
 import { Steps, Card, Row, Col, Typography, theme } from "antd";
 
 const { Title, Paragraph } = Typography;
