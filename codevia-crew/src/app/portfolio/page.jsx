@@ -7,10 +7,10 @@ import { useTheme } from "../../components/ThemeProvider";
 // Figma image assets
 // Figma image assets for light and dark theme
 const lightImgs = {
-  imgDepth7Frame0: "http://localhost:3845/assets/ed7ff537c17ea15b731aa32a41f8a4d6fd45ddeb.png",
-  imgDepth7Frame1: "http://localhost:3845/assets/bbb7543930c815fe563c4a50956c14afd76ea5dd.png",
-  imgDepth7Frame2: "http://localhost:3845/assets/266ee5c987b7f8613bf14ed5774a58287e2ccb0c.png",
-  imgDepth8Frame0: "http://localhost:3845/assets/b582ef14efb872b91a203eda3b5b368bc07f3f30.png",
+  imgDepth7Frame0: "/images/portfolio/lightproject1.png",
+  imgDepth7Frame1: "/images/portfolio/lightproject2.png",
+  imgDepth7Frame2: "/images/portfolio/lightproject3.png",
+  imgDepth8Frame0: "/images/portfolio/lightteam1.png",
   imgDepth8Frame1: "http://localhost:3845/assets/9d95d741a087edc69127cc98bbee72d60982d99a.png",
   imgDepth8Frame2: "http://localhost:3845/assets/f02caa1b6af1863ba5176a53ad07e29b430fa7df.png",
   imgDepth7Frame3: "http://localhost:3845/assets/8a6243e258a6b06c6f65dfc0a24bc5eca96f3ddc.png",
