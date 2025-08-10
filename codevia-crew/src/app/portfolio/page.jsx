@@ -1,5 +1,4 @@
 "use client";
-
 import { Card, Typography, Row, Col, Avatar } from "antd";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
