@@ -2,7 +2,7 @@
 
 export default function About() {
   return (
-    <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#1A202C]">
+    <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#1A202C] pt-20">
       {/* Hero Section */}
       <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-white dark:bg-[#1A202C]">
         <h1 className="text-[#232B3A] dark:text-white text-4xl md:text-5xl font-bold font-inter text-center mb-4">About Innovatech Solutions</h1>

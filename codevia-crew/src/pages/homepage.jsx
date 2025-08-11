@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center bg-white dark:bg-[#121417]">
       {/* Hero Section */}
-      <div className="w-full bg-[#F3F4F6] dark:bg-[#1A202C]">
+      <div className="w-full bg-[#F3F4F6] dark:bg-[#1A202C] pt-20">
         <section className="max-w-7xl mx-auto px-4 md:px-20 flex flex-col gap-6 my-8">
           <div className="relative w-full min-h-[320px] md:min-h-[480px] rounded-xl overflow-hidden" style={{backgroundImage: 'url(/globe.svg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
             <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-white/10 to-black/40 dark:from-black/10 dark:to-black/40" />
