@@ -124,7 +124,7 @@ export default function BlogPage() {
     >
       <div className={`min-h-screen flex flex-col ${isDark ? 'bg-[#0d1117] text-white' : 'bg-white text-gray-900'} transition-colors`}>
         <Navbar />
-        <main className="flex-1 w-full">
+        <main className="flex-1 w-full pt-20">
           {/* Hero / Featured */}
           <section className="max-w-6xl mx-auto px-4 pt-12 pb-6">
             <div className="grid md:grid-cols-2 gap-10 items-start">

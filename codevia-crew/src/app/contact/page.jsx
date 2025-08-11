@@ -5,10 +5,9 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function Contact() {
   return (
-    <ThemeProvider>
       <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#121417]">
         <Navbar />
-        <div className="flex justify-center items-center py-8"></div>
+        <div className="flex justify-center items-center py-8 pt-20"></div>
         <main className="flex flex-col items-center w-full px-4">
           <section className="w-full max-w-2xl bg-[#F3F4F6] dark:bg-[#232B3A] rounded-2xl shadow-lg p-8 mb-10">
             <h1 className="text-[#232B3A] dark:text-white text-3xl font-bold font-inter mb-2">Get in touch</h1>
@@ -58,6 +57,5 @@ export default function Contact() {
         </main>
         <Footer />
       </div>
-    </ThemeProvider>
   );
 }

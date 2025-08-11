@@ -46,7 +46,7 @@ export default function PortfolioPage() {
   return (
     <div className={`min-h-screen w-full ${palette.bg} transition-colors duration-300`}>
       <Navbar />
-      <main className="max-w-6xl mx-auto px-4 py-10">
+      <main className="max-w-6xl mx-auto px-4 py-10 pt-20">
         <Typography.Title level={1} className={`!text-4xl !mb-2 ${palette.textMain}`}>Our Portfolio</Typography.Title>
         <Typography.Paragraph className={`!mb-8 ${palette.textSub}`}>
           Explore our diverse range of projects, showcasing our expertise in web development, mobile apps, and digital marketing. Each project reflects our commitment to quality and innovation. Interact with the elements to discover more about our work.

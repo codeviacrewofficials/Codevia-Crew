@@ -58,7 +58,7 @@ export default function CaseStudyPage() {
   return (
     <div className="bg-white dark:bg-[#121417] min-h-screen">
       <Navbar />
-      <div className="max-w-4xl mx-auto px-4 py-8">
+      <div className="max-w-4xl mx-auto px-4 py-8 pt-20">
         <div className="mb-4 text-[#697582] dark:text-gray-400 flex gap-2">
           <span>Work</span>
           <span>/</span>
