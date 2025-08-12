@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import OurClientsCarousel from "../components/clientcorusal"
 
 // Service Card Component
 function ServiceCard({ title, description, icon }) {
@@ -156,19 +158,7 @@ export default function HomePage() {
       </div>
 
       {/* Our Clients Section */}
-      <div className="w-full bg-[#E5E7EB] dark:bg-[#232B3A]">
-        <section className="max-w-7xl mx-auto px-2 md:px-5 my-8">
-          <h2 className="text-[#232B3A] dark:text-white text-xl md:text-2xl font-bold font-inter mb-4">Our Clients</h2>
-          <div className="flex flex-wrap gap-4 justify-start items-center">
-            {/* Example Client Logos */}
-            <img className="w-24 h-24 object-cover rounded-lg" src="https://placehold.co/96x96" alt="Client 1" />
-            <img className="w-24 h-24 object-cover rounded-lg" src="https://placehold.co/96x96" alt="Client 2" />
-            <img className="w-24 h-24 object-cover rounded-lg" src="https://placehold.co/96x96" alt="Client 3" />
-            <img className="w-24 h-24 object-cover rounded-lg" src="https://placehold.co/96x96" alt="Client 4" />
-            <img className="w-24 h-24 object-cover rounded-lg" src="https://placehold.co/96x96" alt="Client 5" />
-          </div>
-        </section>
-      </div>
+       <OurClientsCarousel />
 
       {/* Call to Action Section */}
       <div className="w-full bg-[#F3F4F6] dark:bg-[#1A202C]">
