@@ -105,7 +105,7 @@ export default function Services() {
       </span>
     ),
     children: (
-      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] font-inter text-l">
+      <span className="text-[#6B7280] dark:text-white font-inter text-l">
         {b.desc}
       </span>
     ),
