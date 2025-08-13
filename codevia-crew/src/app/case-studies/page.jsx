@@ -1,6 +1,7 @@
 'use client';
 import React from "react";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Steps, Card, Row, Col, Typography, theme } from "antd";
 
 const { Title, Paragraph } = Typography;
@@ -56,7 +57,7 @@ const results = [
 
 export default function CaseStudyPage() {
   return (
-    <div className="bg-white dark:bg-[#121417] min-h-screen">
+    <div className="bg-white dark:bg-[#1A202C] min-h-screen">
       <Navbar />
       <div className="max-w-4xl mx-auto px-4 py-8 pt-20">
         <div className="mb-4 text-[#697582] dark:text-gray-400 flex gap-2">
@@ -99,7 +100,7 @@ export default function CaseStudyPage() {
             <Col xs={24} md={8} key={result.label}>
               <Card className="bg-white dark:bg-[#1f2124] border border-[#dee0e3] dark:border-[#232B3A] rounded-lg">
                 <Title level={4} className="text-[#121417] dark:text-white">{result.label}</Title>
-                <Paragraph className="text-[#088738] dark:text-[#0ad95c] text-2xl font-bold">{result.value}</Paragraph>
+                <Paragraph className="text-[#0ad95c] dark:text-[#0ad95c] text-2xl font-bold">{result.value}</Paragraph>
               </Card>
             </Col>
           ))}
@@ -112,7 +113,7 @@ export default function CaseStudyPage() {
           <Paragraph className="text-[#121417] dark:text-white">Sarah Chen, CEO of Innovatech Solutions</Paragraph>
         </Card>
       </div>
-      <footer className="text-center text-[#697582] dark:text-gray-400 py-8">@2024 Nova Designs. All rights reserved.</footer>
+      <Footer />
     </div>
   );
 }

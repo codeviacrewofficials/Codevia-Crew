@@ -23,7 +23,7 @@ const SERVICE_TABS = [
     content: {
       title: "Web Applications",
       desc: "We build responsive, scalable, and secure web applications tailored to your business goals. Our process includes understanding your requirements, designing a user-friendly interface, developing the application, rigorous testing, and deployment.",
-      image: "/window.svg",
+      image: "/gif/web.gif",
       benefits: [
         {
           title: "Increased Efficiency",
@@ -43,12 +43,12 @@ const SERVICE_TABS = [
   },
   {
     key: "android",
-    label: "Android Apps",
+    label: "App Development",
     icon: MdAndroid,
     content: {
-      title: "Android App Development",
-      desc: "We design and develop high-performance Android applications tailored to your business needs, from concept to deployment.",
-      image: "/globe.svg",
+      title: "App Development",
+      desc: "We design and develop high-performance applications tailored to your business needs, from concept to deployment.",
+      image: "/gif/app.gif",
       benefits: [
         {
           title: "Custom Solutions",
@@ -73,7 +73,7 @@ const SERVICE_TABS = [
     content: {
       title: "Data Analytics",
       desc: "Transform raw data into actionable insights that drive strategic decisions and business growth.",
-      image: "/file.svg",
+      image: "/gif/data.gif",
       benefits: [
         {
           title: "Actionable Insights",
@@ -225,14 +225,14 @@ export default function Services() {
   };
 
   return (
-    <div className="w-full min-h-screen flex flex-col bg-[#F9FAFB] dark:bg-[#121417]">
+    <div className="w-full min-h-screen flex flex-col bg-[#F9FAFB] dark:bg-[#1A202C]">
       <Navbar />
       <main className="flex flex-col items-center w-full px-0 py-10 pt-20">
         {/* Header Section */}
         <section className="w-full max-w-6xl mx-auto px-4 md:px-0">
           <div className="flex flex-col items-center">
             <h1 className="text-4xl md:text-5xl font-bold font-inter text-[#232B3A] dark:text-white mb-2" style={{ lineHeight: '48px' }}>Our Services</h1>
-            <p className="text-lg md:text-xl text-center text-[#4B5563] dark:text-[#A3ABB2] font-inter max-w-2xl mb-8" style={{ lineHeight: '28px' }}>
+            <p className="text-lg md:text-xl text-center text-[#4B5563] dark:text-[#A3ABB2] font-inter max-w-7xl mb-8" style={{ lineHeight: '28px' }}>
               We offer a comprehensive suite of technology services designed to help businesses thrive in the digital age. From custom web applications to mobile solutions and data analytics, we have the expertise to meet your unique needs.
             </p>
           </div>
@@ -291,10 +291,8 @@ export default function Services() {
               <a href={tab.content.cta.href} className={`inline-block px-6 py-2 rounded-md font-semibold font-inter mt-2 ${tab.content.cta.color} transition`}>{tab.content.cta.label}</a>
             </div>
             {/* Right: Image */}
-            <div className="flex-1 flex justify-center items-center min-w-[300px]">
-              <div className="w-full max-w-md aspect-[4/3] bg-gradient-to-br from-[#e0e7ef] to-[#c7d2fe] dark:from-[#232B3A] dark:to-[#1F2937] rounded-lg flex items-center justify-center">
-                <img src={tab.content.image} alt={tab.content.title} className="w-32 h-32 object-contain" />
-              </div>
+            <div className="flex-1 flex justify-center items-center min-w-[300px]">             
+                <img src={tab.content.image} alt={tab.content.title} className="w-90 h-90 object-contain" />
             </div>
           </div>
         </section>
@@ -317,7 +315,7 @@ export default function Services() {
                 <Carousel autoplay autoplaySpeed={5000} dots swipeToSlide draggable>
                   {webPricingPlans.map((plan, idx) => (
                     <div key={plan.title} className="px-2">
-                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -336,21 +334,9 @@ export default function Services() {
               {/* Desktop Scrollable Cards */}
               <div className="hidden md:block">
                 <div className="relative w-full">
-                  <button
-                    type="button"
-                    aria-label="Scroll left"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('web-pricing-scroll');
-                      if (el) el.scrollBy({ left: -350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                  </button>
                   <div id="web-pricing-scroll" className="flex gap-8 overflow-x-auto md:overflow-x-visible md:flex-row justify-center w-full pb-4 scroll-smooth" style={{ scrollbarWidth: 'none' }}>
                     {webPricingPlans.map((plan, idx) => (
-                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -364,18 +350,6 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    aria-label="Scroll right"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('web-pricing-scroll');
-                      if (el) el.scrollBy({ left: 350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -388,7 +362,7 @@ export default function Services() {
                 <Carousel autoplay autoplaySpeed={5000} dots swipeToSlide draggable>
                   {androidPricingPlans.map((plan, idx) => (
                     <div key={plan.title} className="px-2">
-                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -407,21 +381,9 @@ export default function Services() {
               {/* Desktop Scrollable Cards */}
               <div className="hidden md:block">
                 <div className="relative w-full">
-                  <button
-                    type="button"
-                    aria-label="Scroll left"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('app-pricing-scroll');
-                      if (el) el.scrollBy({ left: -350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                  </button>
                   <div id="app-pricing-scroll" className="flex gap-8 overflow-x-auto md:overflow-x-visible md:flex-row justify-center w-full pb-4 scroll-smooth" style={{ scrollbarWidth: 'none' }}>
                     {androidPricingPlans.map((plan, idx) => (
-                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -435,18 +397,6 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    aria-label="Scroll right"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('app-pricing-scroll');
-                      if (el) el.scrollBy({ left: 350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  </button>
                 </div>
               </div>
             </div>
@@ -459,7 +409,7 @@ export default function Services() {
                 <Carousel autoplay autoplaySpeed={5000} dots swipeToSlide draggable>
                   {analyticsPricingPlans.map((plan, idx) => (
                     <div key={plan.title} className="px-2">
-                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col relative shadow-md border-b-2 border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -478,21 +428,9 @@ export default function Services() {
               {/* Desktop Scrollable Cards */}
               <div className="hidden md:block">
                 <div className="relative w-full">
-                  <button
-                    type="button"
-                    aria-label="Scroll left"
-                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('analytics-pricing-scroll');
-                      if (el) el.scrollBy({ left: -350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                  </button>
                   <div id="analytics-pricing-scroll" className="flex gap-8 overflow-x-auto md:overflow-x-visible md:flex-row justify-center w-full pb-4 scroll-smooth" style={{ scrollbarWidth: 'none' }}>
                     {analyticsPricingPlans.map((plan, idx) => (
-                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r border-[#E5E7EB] dark:border-gray-700 transition-colors">
+                      <div key={plan.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
                         <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2 flex items-center">
                           <span className="mr-2 text-2xl">{plan.icon}</span> {plan.title}
                         </h4>
@@ -506,18 +444,6 @@ export default function Services() {
                       </div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    aria-label="Scroll right"
-                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-[#232B3A] border border-gray-200 dark:border-gray-700 rounded-full shadow p-2 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition disabled:opacity-30"
-                    style={{ display: 'block' }}
-                    onClick={() => {
-                      const el = document.getElementById('analytics-pricing-scroll');
-                      if (el) el.scrollBy({ left: 350, behavior: 'smooth' });
-                    }}
-                  >
-                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
-                  </button>
                 </div>
               </div>
             </div>
