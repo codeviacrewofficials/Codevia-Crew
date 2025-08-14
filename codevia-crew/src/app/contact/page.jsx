@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 export default function Contact() {
   return (
-      <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#121417]">
+      <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#1A202C]">
         <Navbar />
         <div className="flex justify-center items-center py-8 pt-20"></div>
         <main className="flex flex-col items-center w-full px-4">
