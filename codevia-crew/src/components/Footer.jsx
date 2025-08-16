@@ -4,14 +4,24 @@ import Link from 'next/link';
 function ListSection({ title, items, minWidth = 'min-w-[250px]' }) {
     return (
         <div className={`${minWidth} mb-8`}>
-            <div className="text-black text-x font-bold font-poppins uppercase leading-5 tracking-wider mb-4 dark:text-[#F9FAFB]">{title}</div>
+            <div className="text-black text-x font-bold font-poppins uppercase leading-5 tracking-wider mb-4 dark:text-[#F9FAFB]">
+                {title}
+            </div>
             {items && items.length > 0 && (
                 <ul className="space-y-2">
                     {items.map((item, idx) => (
                         <li key={idx} className="text-[#9CA3AF] text-base font-poppins leading-6">
                             {item.href ? (
-                                <Link href={item.href} className="hover:text-white transition-all duration-300 underline-offset-4 hover:underline"
-                                >{item.label}</Link>
+                                <Link
+                                    href={item.href}
+                                    className="relative transition-all duration-300
+                                        hover:text-black dark:hover:text-white
+                                        after:content-[''] after:absolute after:left-0 after:bottom-0 
+                                        after:w-0 after:h-[2px] after:bg-current after:transition-all after:duration-300
+                                        hover:after:w-full"
+                                >
+                                    {item.label}
+                                </Link>
                             ) : (
                                 item.label
                             )}
@@ -22,6 +32,7 @@ function ListSection({ title, items, minWidth = 'min-w-[250px]' }) {
         </div>
     );
 }
+
 
 export default function Footer() {
     return (
