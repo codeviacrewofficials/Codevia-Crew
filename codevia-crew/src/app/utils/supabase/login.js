@@ -1,4 +1,4 @@
-import { supabase } from './client'
+import { Supabase } from './client.js'
 
 /**
  * Sign in with email and password
@@ -6,9 +6,11 @@ import { supabase } from './client'
  * @param {string} password - User's password
  * @returns {Object} - { data, error }
  */
+
+
 export const signInWithEmail = async (email, password) => {
   try {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await Supabase.auth.signInWithPassword({
       email,
       password,
     })
@@ -29,9 +31,11 @@ export const signInWithEmail = async (email, password) => {
  * @param {string} redirectTo - URL to redirect after authentication
  * @returns {Object} - { data, error }
  */
+
+
 export const signInWithOAuth = async (provider, redirectTo = window.location.origin) => {
   try {
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    const { data, error } = await Supabase.auth.signInWithOAuth({
       provider,
       options: {
         redirectTo,
@@ -54,7 +58,7 @@ export const signInWithOAuth = async (provider, redirectTo = window.location.ori
  */
 export const signOut = async () => {
   try {
-    const { error } = await supabase.auth.signOut()
+    const { error } = await Supabase.auth.signOut()
     
     if (error) {
       return { error: error.message }
@@ -72,7 +76,7 @@ export const signOut = async () => {
  */
 export const getCurrentUser = async () => {
   try {
-    const { data: { user }, error } = await supabase.auth.getUser()
+    const { data: { user }, error } = await Supabase.auth.getUser()
     
     if (error) {
       return { data: null, error: error.message }
@@ -90,7 +94,7 @@ export const getCurrentUser = async () => {
  */
 export const getSession = async () => {
   try {
-    const { data: { session }, error } = await supabase.auth.getSession()
+    const { data: { session }, error } = await Supabase.auth.getSession()
     
     if (error) {
       return { data: null, error: error.message }

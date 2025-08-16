@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import Link from "next/link";
 import Particles from "@/styles/Particles";
+import { signInWithEmail } from "../utils/supabase/login";
 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
@@ -55,11 +56,13 @@ const LoginPage = () => {
     }
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Login attempt:", formData);
-      alert("Login successful!");
+      const {data, error} = await signInWithEmail(formData.email, formData.password);
+      if(data.message == "Login successful!"){
+        console.log("Login attempt:", formData);
+        alert("Login successful!");
+      }
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Login failed:", error.message);
     } finally {
       setLoading(false);
     }

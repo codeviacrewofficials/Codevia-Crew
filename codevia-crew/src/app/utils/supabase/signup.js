@@ -1,4 +1,4 @@
-import { supabase } from './client'
+import { Supabase } from './client.js'
 
 /**
  * Sign up with email and password
@@ -9,7 +9,7 @@ import { supabase } from './client'
  */
 export const signUpWithEmail = async (email, password, metadata = {}) => {
   try {
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error } = await Supabase.auth.signUp({
       email,
       password,
       options: {
@@ -75,7 +75,7 @@ export const registerUser = async ({ email, password, name, additionalData = {} 
  */
 export const resendConfirmation = async (email) => {
   try {
-    const { data, error } = await supabase.auth.resend({
+    const { data, error } = await Supabase.auth.resend({
       type: 'signup',
       email,
     })

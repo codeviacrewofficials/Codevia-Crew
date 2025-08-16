@@ -1,4 +1,4 @@
-import { supabase } from './client'
+import { Supabase } from './client.js'
 
 /**
  * Send password reset email
@@ -14,7 +14,7 @@ export const sendPasswordResetEmail = async (email, redirectTo = null) => {
 
     const options = redirectTo ? { redirectTo } : {}
     
-    const { data, error } = await supabase.auth.resetPasswordForEmail(email, options)
+    const { data, error } = await Supabase.auth.resetPasswordForEmail(email, options)
 
     if (error) {
       return { data: null, error: error.message }
@@ -45,7 +45,7 @@ export const updatePassword = async (newPassword) => {
       return { data: null, error: 'Password must be at least 6 characters long' }
     }
 
-    const { data, error } = await supabase.auth.updateUser({
+    const { data, error } = await Supabase.auth.updateUser({
       password: newPassword
     })
 
@@ -69,7 +69,7 @@ export const updatePassword = async (newPassword) => {
  */
 export const verifyResetSession = async () => {
   try {
-    const { data: { session }, error } = await supabase.auth.getSession()
+    const { data: { session }, error } = await Supabase.auth.getSession()
     
     if (error) {
       return { isValid: false, error: error.message }
@@ -104,7 +104,7 @@ export const handlePasswordResetCallback = async () => {
     }
 
     // Set the session with the tokens from the URL
-    const { data, error } = await supabase.auth.setSession({
+    const { data, error } = await Supabase.auth.setSession({
       access_token: accessToken,
       refresh_token: refreshToken,
     })
