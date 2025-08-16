@@ -65,8 +65,8 @@ const teamMembers = [
     desc: "Expert in full-stack development and scalable architectures.",
   },
   {
-    name: "Noah Carter",
-    role: "Project Manager",
+    name: "Mohit Verma",
+    role: "Advisor cum consultant",
     imgKey: "imgDepth8Frame2",
     desc: "Ensures timely delivery and client satisfaction.",
   },
