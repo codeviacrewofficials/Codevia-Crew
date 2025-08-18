@@ -1,4 +1,4 @@
-import { Supabase } from './client.js'
+import { createClient } from './client'
 
 /**
  * Send password reset email
@@ -6,7 +6,9 @@ import { Supabase } from './client.js'
  * @param {string} redirectTo - URL to redirect after password reset (optional)
  * @returns {Object} - { data, error, message }
  */
+
 export const sendPasswordResetEmail = async (email, redirectTo = null) => {
+  const supabase = createClient()
   try {
     if (!email) {
       return { data: null, error: 'Email address is required' }
@@ -14,7 +16,7 @@ export const sendPasswordResetEmail = async (email, redirectTo = null) => {
 
     const options = redirectTo ? { redirectTo } : {}
     
-    const { data, error } = await Supabase.auth.resetPasswordForEmail(email, options)
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, options)
 
     if (error) {
       return { data: null, error: error.message }
@@ -36,6 +38,7 @@ export const sendPasswordResetEmail = async (email, redirectTo = null) => {
  * @returns {Object} - { data, error }
  */
 export const updatePassword = async (newPassword) => {
+  const supabase = createClient()
   try {
     if (!newPassword) {
       return { data: null, error: 'New password is required' }
@@ -45,7 +48,7 @@ export const updatePassword = async (newPassword) => {
       return { data: null, error: 'Password must be at least 6 characters long' }
     }
 
-    const { data, error } = await Supabase.auth.updateUser({
+    const { data, error } = await supabase.auth.updateUser({
       password: newPassword
     })
 
@@ -68,8 +71,9 @@ export const updatePassword = async (newPassword) => {
  * @returns {Object} - { isValid, error }
  */
 export const verifyResetSession = async () => {
+  const supabase = createClient()
   try {
-    const { data: { session }, error } = await Supabase.auth.getSession()
+    const { data: { session }, error } = await supabase.auth.getSession()
     
     if (error) {
       return { isValid: false, error: error.message }
@@ -92,6 +96,7 @@ export const verifyResetSession = async () => {
  * @returns {Object} - { isValid, error }
  */
 export const handlePasswordResetCallback = async () => {
+  const supabase = createClient()
   try {
     // Get the current URL hash parameters
     const hashParams = new URLSearchParams(window.location.hash.substring(1))
@@ -104,7 +109,7 @@ export const handlePasswordResetCallback = async () => {
     }
 
     // Set the session with the tokens from the URL
-    const { data, error } = await Supabase.auth.setSession({
+    const { data, error } = await supabase.auth.setSession({
       access_token: accessToken,
       refresh_token: refreshToken,
     })

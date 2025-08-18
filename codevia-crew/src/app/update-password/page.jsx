@@ -1,29 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
-  MailOutlined,
   LockOutlined,
   EyeInvisibleOutlined,
   EyeFilled,
-  UserOutlined,
 } from "@ant-design/icons";
 import Link from "next/link";
 import Particles from "@/styles/Particles";
-import { registerUser } from "../utils/supabase/signup";
+import { updatePassword, handlePasswordResetCallback } from "../utils/supabase/forgetpassword";
 import { useRouter } from 'next/navigation'
 
-const SignUpPage = () => {
+const UpdatePasswordPage = () => {
   const router = useRouter()
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
     password: "",
     confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowconfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [isValidToken, setIsValidToken] = useState(false);
+
+  useEffect(() => {
+    const checkToken = async () => {
+      const { isValid, error } = await handlePasswordResetCallback();
+      if (error) {
+        setErrors({ api: error });
+      }
+      setIsValidToken(isValid);
+    };
+    checkToken();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -41,14 +48,6 @@ const SignUpPage = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username) {
-      newErrors.username = "Username is required";
-    }
-    if (!formData.email) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Please enter a valid email address";
-    }
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
@@ -68,24 +67,51 @@ const SignUpPage = () => {
     }
     setLoading(true);
     try {
-      const { error } = await registerUser({
-        email: formData.email,
-        password: formData.password,
-        name: formData.username,
-      });
-
+      const { error } = await updatePassword(formData.password);
       if (error) {
         setErrors({ api: error });
       } else {
-        router.push('/')
-        router.refresh()
+        router.push('/login');
       }
     } catch (error) {
-      console.error("Signup failed:", error);
+      console.error("Update password failed:", error);
     } finally {
       setLoading(false);
     }
   };
+
+  if (!isValidToken) {
+    return (
+      <section className="relative w-full h-screen">
+        <div className="absolute inset-0">
+          <Particles
+            particleColors={["#ffffff", "#ffffff"]}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+          />
+        </div>
+        <div className="min-h-screen flex items-center justify-center p-4 relative">
+          <div className="w-full max-w-md text-center">
+            <h1 className="text-2xl font-bold text-white mb-2">Invalid or Expired Token</h1>
+            <p className="text-gray-300">Please request a new password reset link.</p>
+            <div className="mt-6">
+              <Link
+                href="/forgot-password"
+                className="text-indigo-400 hover:text-indigo-300 font-medium"
+              >
+                &larr; Back to Forgot Password
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="relative w-full h-screen">
@@ -106,79 +132,21 @@ const SignUpPage = () => {
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-white/20">
             <div className="text-center mb-8">
               <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserOutlined className="text-white text-3xl" />
+                <LockOutlined className="text-white text-3xl" />
               </div>
               <h1 className="text-2xl font-bold text-white mb-2">
-                Create Account
+                Update Password
               </h1>
-              <p className="text-gray-300">Join us and start your journey</p>
+              <p className="text-gray-300">Enter your new password</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
-                  htmlFor="username"
-                  className="block text-sm font-medium text-gray-200 mb-2"
-                >
-                  Username
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <UserOutlined className="h-5 w-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
-                    onChange={handleChange}
-                    className={`w-full pl-10 pr-4 py-3 border rounded-lg bg-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
-                      errors.username ? "border-red-400" : "border-white/20"
-                    }`}
-                    placeholder="Enter your username"
-                  />
-                </div>
-                {errors.username && (
-                  <p className="mt-1 text-sm text-red-400">
-                    {errors.username}
-                  </p>
-                )}
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-200 mb-2"
-                >
-                  Email Address
-                </label>
-                <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <MailOutlined className="h-5 w-5 text-gray-400" />
-                  </div>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`w-full pl-10 pr-4 py-3 border rounded-lg bg-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
-                      errors.email ? "border-red-400" : "border-white/20"
-                    }`}
-                    placeholder="Enter your email"
-                  />
-                </div>
-                {errors.email && (
-                  <p className="mt-1 text-sm text-red-400">{errors.email}</p>
-                )}
-              </div>
-
-              <div>
-                <label
                   htmlFor="password"
                   className="block text-sm font-medium text-gray-200 mb-2"
                 >
-                  Password
+                  New Password
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -193,7 +161,7 @@ const SignUpPage = () => {
                     className={`w-full pl-10 pr-12 py-3 border rounded-lg bg-white/10 text-white placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors ${
                       errors.password ? "border-red-400" : "border-white/20"
                     }`}
-                    placeholder="Enter your password"
+                    placeholder="Enter your new password"
                   />
                   <button
                     type="button"
@@ -219,14 +187,14 @@ const SignUpPage = () => {
                   htmlFor="confirmPassword"
                   className="block text-sm font-medium text-gray-200 mb-2"
                 >
-                  Confirm Password
+                  Confirm New Password
                 </label>
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <LockOutlined className="h-5 w-5 text-gray-400" />
                   </div>
                   <input
-                    type={showConfirmPassword ? "text" : "password"}
+                    type="password"
                     id="confirmPassword"
                     name="confirmPassword"
                     value={formData.confirmPassword}
@@ -236,19 +204,8 @@ const SignUpPage = () => {
                         ? "border-red-400"
                         : "border-white/20"
                     }`}
-                    placeholder="Confirm your password"
+                    placeholder="Confirm your new password"
                   />
-                  <button
-                    type="button"
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center"
-                    onClick={() => setShowconfirmPassword(!showConfirmPassword)}
-                  >
-                    {showPassword ? (
-                      <EyeInvisibleOutlined className="h-5 w-5 text-gray-400 hover:text-gray-200" />
-                    ) : (
-                      <EyeFilled className="h-5 w-5 text-gray-400 hover:text-gray-200" />
-                    )}
-                  </button>
                 </div>
                 {errors.confirmPassword && (
                   <p className="mt-1 text-sm text-red-400">
@@ -265,25 +222,13 @@ const SignUpPage = () => {
                 {loading ? (
                   <div className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                    Creating Account...
+                    Updating Password...
                   </div>
                 ) : (
-                  "Sign Up"
+                  "Update Password"
                 )}
               </button>
             </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-sm text-gray-300">
-                Already have an account?{" "}
-                <Link
-                  href="/login"
-                  className="text-indigo-400 hover:text-indigo-300 font-medium"
-                >
-                  Sign in
-                </Link>
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -291,4 +236,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
+export default UpdatePasswordPage;

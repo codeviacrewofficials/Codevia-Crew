@@ -9,8 +9,10 @@ import {
 import Link from "next/link";
 import Particles from "@/styles/Particles";
 import { signInWithEmail } from "../utils/supabase/login";
+import { useRouter } from 'next/navigation'
 
 const LoginPage = () => {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -56,10 +58,12 @@ const LoginPage = () => {
     }
     setLoading(true);
     try {
-      const {data, error} = await signInWithEmail(formData.email, formData.password);
-      if(data.message == "Login successful!"){
-        console.log("Login attempt:", formData);
-        alert("Login successful!");
+      const { error } = await signInWithEmail(formData.email, formData.password);
+      if (error) {
+        setErrors({ api: error });
+      } else {
+        router.push('/')
+        router.refresh()
       }
     } catch (error) {
       console.error("Login failed:", error.message);

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { MailOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import Particles from "@/styles/Particles";
+import { sendPasswordResetEmail } from "../utils/supabase/forgetpassword";
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState("");
@@ -35,9 +36,12 @@ const ForgotPasswordPage = () => {
     }
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Password reset request for:", email);
-      setSubmitted(true);
+      const { error } = await sendPasswordResetEmail(email);
+      if (error) {
+        setError(error);
+      } else {
+        setSubmitted(true);
+      }
     } catch (error) {
       console.error("Password reset failed:", error);
       setError("Failed to send reset link. Please try again.");

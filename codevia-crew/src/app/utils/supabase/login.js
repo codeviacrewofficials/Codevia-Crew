@@ -1,4 +1,4 @@
-import { Supabase } from './client.js'
+import { createClient } from './client'
 
 /**
  * Sign in with email and password
@@ -6,11 +6,10 @@ import { Supabase } from './client.js'
  * @param {string} password - User's password
  * @returns {Object} - { data, error }
  */
-
-
 export const signInWithEmail = async (email, password) => {
+  const supabase = createClient()
   try {
-    const { data, error } = await Supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
@@ -31,11 +30,10 @@ export const signInWithEmail = async (email, password) => {
  * @param {string} redirectTo - URL to redirect after authentication
  * @returns {Object} - { data, error }
  */
-
-
 export const signInWithOAuth = async (provider, redirectTo = window.location.origin) => {
+  const supabase = createClient()
   try {
-    const { data, error } = await Supabase.auth.signInWithOAuth({
+    const { data, error } = await supabase.auth.signInWithOAuth({
       provider,
       options: {
         redirectTo,
@@ -57,8 +55,9 @@ export const signInWithOAuth = async (provider, redirectTo = window.location.ori
  * @returns {Object} - { error }
  */
 export const signOut = async () => {
+  const supabase = createClient()
   try {
-    const { error } = await Supabase.auth.signOut()
+    const { error } = await supabase.auth.signOut()
     
     if (error) {
       return { error: error.message }
@@ -75,8 +74,9 @@ export const signOut = async () => {
  * @returns {Object} - { data, error }
  */
 export const getCurrentUser = async () => {
+  const supabase = createClient()
   try {
-    const { data: { user }, error } = await Supabase.auth.getUser()
+    const { data: { user }, error } = await supabase.auth.getUser()
     
     if (error) {
       return { data: null, error: error.message }
@@ -93,8 +93,9 @@ export const getCurrentUser = async () => {
  * @returns {Object} - { data, error }
  */
 export const getSession = async () => {
+  const supabase = createClient()
   try {
-    const { data: { session }, error } = await Supabase.auth.getSession()
+    const { data: { session }, error } = await supabase.auth.getSession()
     
     if (error) {
       return { data: null, error: error.message }
