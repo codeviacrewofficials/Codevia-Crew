@@ -2,14 +2,19 @@
 import React from "react";
 import Link from "next/link";
 import OurClientsCarousel from "../components/clientcorusal"
+import { FaLaptopCode, FaMobileAlt, FaChartBar } from "react-icons/fa";
 
 // Service Card Component
-function ServiceCard({ title, description, icon }) {
+function ServiceCard({ title, description, icon: Icon }) {
   return (
     <div className="w-full sm:w-[301px] p-4 bg-white dark:bg-[#1F2126] rounded-lg border border-[#E5E7EB] dark:border-[#40474F] flex flex-col gap-3">
-      <div className="w-6 h-6 bg-[#232B3A] dark:bg-white rounded mb-2" />
-      <div className="text-[#232B3A] dark:text-white text-base font-bold font-inter leading-5">{title}</div>
-      <div className="text-[#4B5563] dark:text-[#A3ABB5] text-sm font-inter leading-5">{description}</div>
+      <div className="flex items-center gap-2 text-[#232B3A] dark:text-white text-base font-bold font-inter leading-5">
+        <Icon className="text-lg" />
+        {title}
+      </div>
+      <div className="text-[#4B5563] dark:text-[#A3ABB5] text-sm font-inter leading-5">
+        {description}
+      </div>
     </div>
   );
 }
@@ -31,7 +36,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="w-full bg-[#F3F4F6] dark:bg-[#1A202C] pt-20">
         <section className="max-w-7xl mx-auto px-4 md:px-20 flex flex-col gap-6 my-8">
-          <div className="relative w-full min-h-[320px] md:min-h-[480px] rounded-xl overflow-hidden" style={{backgroundImage: 'url(/globe.svg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="relative w-full min-h-[320px] md:min-h-[480px] rounded-xl overflow-hidden" style={{ backgroundImage: 'url(/globe.svg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div className="absolute left-0 top-0 w-full h-full bg-gradient-to-r from-white/10 to-black/40 dark:from-black/10 dark:to-black/40" />
             <div className="absolute left-0 top-0 w-full h-full flex flex-col justify-end md:justify-center items-start p-6 md:p-12 gap-2">
               <h1 className="text-[#232B3A] dark:text-white text-3xl md:text-5xl font-black font-inter leading-tight mb-2">Transforming Ideas into Digital Realities</h1>
@@ -52,11 +57,25 @@ export default function HomePage() {
       {/* Our Services Section */}
       <div className="w-full bg-[#E5E7EB] dark:bg-[#232B3A]">
         <section className="max-w-7xl mx-auto px-2 md:px-5 my-8">
-          <h2 className="text-[#232B3A] dark:text-white text-xl md:text-2xl font-bold font-inter mb-4">Our Services</h2>
+          <h2 className="text-[#232B3A] dark:text-white text-xl md:text-2xl font-bold font-inter mb-4">
+            Our Services
+          </h2>
           <div className="flex flex-col sm:flex-row gap-3 flex-wrap">
-            <ServiceCard title="Web & App Development" description="Crafting responsive and user-friendly websites and applications tailored to your business needs." />
-            <ServiceCard title="Data Analytics" description="Leveraging data to provide actionable insights and optimize your business strategies." />
-            <ServiceCard title="Digital Marketing" description="Enhancing your online presence and driving targeted traffic through effective digital marketing campaigns." />
+            <ServiceCard
+              title="Web Development"
+              description="Designing and developing responsive, fast, and modern websites that represent your brand effectively."
+              icon={FaLaptopCode}
+            />
+            <ServiceCard
+              title="App Development"
+              description="Building smooth, scalable, and user-friendly mobile applications tailored to your business needs."
+              icon={FaMobileAlt}
+            />
+            <ServiceCard
+              title="Data Analytics"
+              description="Leveraging data to provide actionable insights and optimize your business strategies."
+              icon={FaChartBar}
+            />
           </div>
         </section>
       </div>
@@ -66,9 +85,9 @@ export default function HomePage() {
         <section className="max-w-7xl mx-auto px-2 md:px-5 my-8">
           <h2 className="text-[#232B3A] dark:text-white text-xl md:text-2xl font-bold font-inter mb-4">Key Statistics</h2>
           <div className="flex flex-col sm:flex-row gap-4 flex-wrap">
-            <StatCard label="Client Satisfaction" value="95%" />
-            <StatCard label="Projects Completed" value="200+" />
-            <StatCard label="Years in Business" value="5+" />
+            <StatCard label="Client Satisfaction" value="90%" />
+            <StatCard label="Projects Completed" value="5+" />
+            <StatCard label="Founded" value="2025" />
           </div>
         </section>
       </div>
@@ -120,6 +139,7 @@ export default function HomePage() {
               </div>
               <div className="text-[#232B3A] dark:text-white text-sm font-inter">Innovatech Solutions transformed our online store. Their expertise and dedication led to a significant increase in sales. Highly recommend!</div>
             </div>
+
             <div className="flex-1 min-w-[220px] bg-white dark:bg-[#121417] rounded-lg p-4 flex flex-col gap-3 border border-[#E5E7EB] dark:border-[#23272c]">
               <div className="flex items-center gap-3 mb-2">
                 <img className="w-10 h-10 rounded-full" src="https://placehold.co/40x40" alt="Ethan Lee" />
@@ -158,7 +178,7 @@ export default function HomePage() {
       </div>
 
       {/* Our Clients Section */}
-       <OurClientsCarousel />
+      <OurClientsCarousel />
 
       {/* Call to Action Section */}
       <div className="w-full bg-[#F3F4F6] dark:bg-[#1A202C]">

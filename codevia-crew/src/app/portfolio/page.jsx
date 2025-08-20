@@ -32,7 +32,7 @@ const darkImgs = {
 // Portfolio data
 const portfolioProjects = [
   {
-    title: "E-commerce Platform for Local Artisans",
+    title: "E-commerce Platform for Locals",
     desc: "A robust e-commerce platform connecting local artisans with a global market.",
     imgKey: "imgDepth7Frame0",
     tags: ["E-commerce", "Web App", "Marketplace"],
@@ -54,20 +54,20 @@ const portfolioProjects = [
 const teamMembers = [
   {
     name: "Sohom Ghosh",
-    role: "UI/UX Designer",
-    imgKey: "imgDepth8Frame1",
-    desc: "Passionate about crafting delightful user experiences.",
+    role: "UI/UX & Web Developer",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Sohom.jpeg",
+    desc: "Designs intuitive interfaces and builds responsive web experiences.",
   },
   {
     name: "Manas Raj",
-    role: "Lead Developer",
-    imgKey: "imgDepth8Frame0",
-    desc: "Expert in full-stack development and scalable architectures.",
+    role: "Full-Stack & App Developer",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Manas.jpeg",
+    desc: "Specializes in scalable apps and full-stack solutions with modern tech.",
   },
   {
     name: "Mohit Verma",
     role: "Advisor cum consultant",
-    imgKey: "imgDepth8Frame2",
+    img: "imgDepth8Frame2",
     desc: "Ensures timely delivery and client satisfaction.",
   },
 ];
@@ -159,7 +159,11 @@ export default function PortfolioPage() {
               {teamMembers.map(member => (
                 <div key={member.name} className="px-2">
                   <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs mx-auto flex flex-col items-center shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
-                    <img src={imgs[member.imgKey]} alt={member.name} className="rounded-full w-28 h-28 object-cover mb-4" />
+                    <img
+                      src={member.img.startsWith("http") ? member.img : imgs[member.img]}
+                      alt={member.name}
+                      className="rounded-full w-28 h-28 object-cover mb-4"
+                    />
                     <h4 className="text-xl font-bold text-black dark:text-white mb-1">{member.name}</h4>
                     <div className="text-[#4B5563] dark:text-[#A3ABB2] text-sm mb-2">{member.role}</div>
                     <p className="text-[#232B3A] dark:text-[#A3ABB2] text-center text-sm">{member.desc}</p>
@@ -168,17 +172,23 @@ export default function PortfolioPage() {
               ))}
             </Carousel>
           </div>
+
           {/* Desktop Cards */}
           <div className="hidden md:flex gap-8 justify-center">
             {teamMembers.map(member => (
               <div key={member.name} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[280px] max-w-xs flex flex-col items-center shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
-                <img src={imgs[member.imgKey]} alt={member.name} className="rounded-full w-28 h-28 object-cover mb-4" />
+                <img
+                  src={member.img.startsWith("http") ? member.img : imgs[member.img]}
+                  alt={member.name}
+                  className="rounded-full w-28 h-28 object-cover mb-4"
+                />
                 <h4 className="text-xl font-bold text-black dark:text-white mb-1">{member.name}</h4>
                 <div className="text-[#4B5563] dark:text-[#A3ABB2] text-sm mb-2">{member.role}</div>
                 <p className="text-[#232B3A] dark:text-[#A3ABB2] text-center text-sm">{member.desc}</p>
               </div>
             ))}
           </div>
+
         </section>
 
         {/* Testimonials Section */}
