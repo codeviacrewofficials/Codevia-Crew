@@ -13,42 +13,40 @@ export default function Navbar() {
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
     { href: "/case-studies", label: "Case Studies" },
-    { href: "/blog", label: "Blogs" },
+    // { href: "/blog", label: "Blogs" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <div
-  className={`fixed w-full px-4 py-1 border-b border-[#232B3A] flex justify-between items-center ${
-    dark ? 'bg-[#1A202C]' : 'bg-white'
-  } z-[9999]`}
->
+      className={`fixed w-full px-4 py-1 border-b border-[#232B3A] flex justify-between items-center ${dark ? 'bg-[#1A202C]' : 'bg-white'
+        } z-[9999]`}
+    >
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <div className="relative w-14 h-14">
-          <img
-            src="/images/Logo/logo_light.svg"
-            alt="Codevia Crew Logo"
-            className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${
-              dark ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <img
-            src="/images/Logo/logo_dark.png"
-            alt="Codevia Crew Logo"
-            className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${
-              dark ? "opacity-100" : "opacity-0"
-            }`}
-          />
-        </div>
-        <span
-          className={`${
-            dark ? "text-white" : "text-[#232B3A]"
-          } text-lg font-bold`}
-        >
-          Codevia Crew
-        </span>
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-14 h-14">
+            <img
+              src="/images/Logo/logo_light.svg"
+              alt="Codevia Crew Logo"
+              className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${dark ? "opacity-0" : "opacity-100"
+                }`}
+            />
+            <img
+              src="/images/Logo/logo_dark.png"
+              alt="Codevia Crew Logo"
+              className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${dark ? "opacity-100" : "opacity-0"
+                }`}
+            />
+          </div>
+          <span
+            className={`${dark ? "text-white" : "text-[#232B3A]"
+              } text-lg font-bold`}
+          >
+            Codevia Crew
+          </span>
+        </Link>
       </div>
 
       {/* Desktop Menu */}
@@ -57,21 +55,19 @@ export default function Navbar() {
         {navLinks.map((link) => (
           <Link key={link.href} href={link.href}>
             <span
-              className={`text-sm font-medium cursor-pointer relative group ${
-                dark ? "text-white" : "text-[#232B3A]"
-              }`}
+              className={`text-sm font-medium cursor-pointer relative group ${dark ? "text-white" : "text-[#232B3A]"
+                }`}
             >
               {link.label}
               <span
-                className={`absolute left-0 -bottom-1 w-full h-0.5 ${
-                  dark ? "bg-white" : "bg-[#232B3A]"
-                } scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
+                className={`absolute left-0 -bottom-1 w-full h-0.5 ${dark ? "bg-white" : "bg-[#232B3A]"
+                  } scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
               />
             </span>
           </Link>
         ))}
         {/* Login */}
-        <Link href="/login">
+        {/* <Link href="/login">
           <div
             className={`h-10 px-4 rounded-full flex items-center justify-center cursor-pointer border transition ${
               dark
@@ -91,9 +87,9 @@ export default function Navbar() {
               Login / Signup
             </span>
           </div>
-        </Link>
+        </Link> */}
         {/* CTA */}
-        <Link href="/quote">
+        {/* <Link href="/quote">
           <div
             className={`h-10 px-4 rounded-full flex items-center justify-center cursor-pointer transition ${
               dark
@@ -109,7 +105,7 @@ export default function Navbar() {
               Get a Quote
             </span>
           </div>
-        </Link>
+        </Link> */}
       </div>
 
       {/* Mobile Menu Button */}
@@ -133,22 +129,20 @@ export default function Navbar() {
       {/* Mobile Dropdown */}
       {menuOpen && (
         <div
-          className={`absolute top-[70px] left-0 w-full flex flex-col items-center py-6 gap-4 border-t ${
-            dark ? "bg-[#1A202C] border-gray-700" : "bg-white border-gray-200"
-          } md:hidden`}
+          className={`absolute top-[70px] left-0 w-full flex flex-col items-center py-6 gap-4 border-t ${dark ? "bg-[#1A202C] border-gray-700" : "bg-white border-gray-200"
+            } md:hidden`}
         >
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               <span
-                className={`text-lg font-medium ${
-                  dark ? "text-white" : "text-[#232B3A]"
-                }`}
+                className={`text-lg font-medium ${dark ? "text-white" : "text-[#232B3A]"
+                  }`}
               >
                 {link.label}
               </span>
             </Link>
           ))}
-          <Link href="/login" onClick={() => setMenuOpen(false)}>
+          {/* <Link href="/login" onClick={() => setMenuOpen(false)}>
             <span
               className={`text-lg font-bold ${
                 dark ? "text-[#BFD6ED]" : "text-[#232B3A]"
@@ -156,8 +150,8 @@ export default function Navbar() {
             >
               Login / Signup
             </span>
-          </Link>
-          <Link href="/quote" onClick={() => setMenuOpen(false)}>
+          </Link> */}
+          {/* <Link href="/quote" onClick={() => setMenuOpen(false)}>
             <div
               className={`mt-2 h-10 px-4 rounded-full flex items-center justify-center cursor-pointer transition ${
                 dark
@@ -173,7 +167,7 @@ export default function Navbar() {
                 Get a Quote
               </span>
             </div>
-          </Link>
+          </Link> */}
         </div>
       )}
     </div>

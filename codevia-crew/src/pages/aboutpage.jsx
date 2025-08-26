@@ -5,9 +5,12 @@ export default function About() {
     <div className="w-full min-h-screen flex flex-col bg-white dark:bg-[#1A202C] pt-20">
       {/* Hero Section */}
       <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-white dark:bg-[#1A202C]">
-        <h1 className="text-[#232B3A] dark:text-white text-4xl md:text-5xl font-bold font-inter text-center mb-4">About Innovatech Solutions</h1>
+        <h1 className="text-[#232B3A] dark:text-white text-4xl md:text-5xl font-bold font-inter text-center mb-4">About Codevia Crew</h1>
         <p className="max-w-2xl text-center text-[#4B5563] dark:text-[#A0AEC0] text-lg md:text-xl font-inter leading-7 mb-8">
-          At Innovatech Solutions, we are a team of passionate innovators dedicated to transforming ideas into impactful digital solutions. With a focus on creativity, collaboration, and cutting-edge technology, we empower businesses to thrive in the digital age.
+          At Codevia Crew, we are a team of passionate creators and problem-solvers dedicated to building impactful digital solutions. With expertise in web development, app development, UI/UX design, and creative content, we help businesses transform ideas into results-driven digital products.
+          <br />
+          <br />
+          Our goal is simple: To make technology work for you.
         </p>
       </section>
 
@@ -19,40 +22,40 @@ export default function About() {
           <div className="flex-1">
             <h2 className="text-[#232B3A] dark:text-white text-2xl md:text-3xl font-bold font-inter mb-4">Our Mission & Values</h2>
             <p className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter leading-7 mb-8">
-              Our mission is to deliver exceptional digital experiences that drive growth and success for our clients. We strive to understand their unique challenges and goals, crafting tailored strategies and solutions that exceed expectations.
+              To craft digital experiences that fuel growth, enhance efficiency, and elevate brands in today’s competitive world.
             </p>
             <div className="flex flex-col gap-6">
               <div className="bg-white dark:bg-[#1A202C] rounded-lg p-6">
-                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">Innovation</h3>
-                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Fostering a culture of forward-thinking and creativity.</p>
+                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">🚀 Innovation</h3>
+                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Embracing creativity and cutting-edge technologies to deliver modern solutions.</p>
               </div>
               <div className="bg-white dark:bg-[#1A202C] rounded-lg p-6">
-                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">Collaboration</h3>
-                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Working together to achieve collective genius.</p>
+                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">🤝 Collaboration</h3>
+                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Working closely with clients as partners to bring their vision to life.</p>
               </div>
               <div className="bg-white dark:bg-[#1A202C] rounded-lg p-6">
-                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">Excellence</h3>
-                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Committing to the highest standards of quality and performance.</p>
+                <h3 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-1">🏆 Excellence</h3>
+                <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">Ensuring high-quality, scalable, and future-ready products every time.</p>
               </div>
             </div>
           </div>
           <div className="flex-1 flex flex-col gap-6 justify-center items-center">
             <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
-              <span className="text-[#1383EB] text-4xl font-bold font-inter">50+</span>
+              <span className="text-[#1383EB] text-4xl font-bold font-inter">5+</span>
               <span className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter mt-2">Projects Completed</span>
             </div>
             <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
-              <span className="text-[#1383EB] text-4xl font-bold font-inter">98%</span>
+              <span className="text-[#1383EB] text-4xl font-bold font-inter">90%</span>
               <span className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter mt-2">Client Satisfaction</span>
             </div>
-            <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
-              <span className="text-[#1383EB] text-4xl font-bold font-inter">10+</span>
-              <span className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter mt-2">Years of Experience</span>
-            </div>
-            <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
+            {/* <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
+              <span className="text-[#1383EB] text-4xl font-bold font-inter">📌 2025 – August</span>
+              <span className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter mt-2">Officially launched Codevia Crew and introduced our digital-first approach to helping businesses build their online presence.</span>
+            </div> */}
+            {/* <div className="bg-white dark:bg-[#1A202C] rounded-lg p-8 w-full max-w-xs flex flex-col items-center">
               <span className="text-[#1383EB] text-4xl font-bold font-inter">5</span>
               <span className="text-[#4B5563] dark:text-[#A0AEC0] text-lg font-inter mt-2">Industry Awards</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -63,20 +66,20 @@ export default function About() {
         <div className="w-full max-w-5xl flex flex-col md:flex-row gap-8 justify-center items-center">
           {/* Team Member Card */}
           {[{
-            name: 'Sophia Chen',
-            role: 'CEO',
+            name: 'Sohom Ghosh',
+            role: 'UI/UX & Web Developer',
             img: 'https://placehold.co/344x384',
-            quote: '"Leading our team to new frontiers of innovation and excellence."',
+            quote: '"Designs intuitive interfaces and builds responsive web experiences."',
           }, {
-            name: 'Ethan Lee',
-            role: 'CTO',
+            name: 'Manas Raj',
+            role: 'Full-Stack & App Developer',
             img: 'https://placehold.co/344x384',
-            quote: '"Turning technology into business value every day."',
+            quote: '"Specializes in scalable apps and full-stack solutions with modern tech."',
           }, {
-            name: 'Olivia Wong',
-            role: 'Head of Design',
+            name: 'Mohit Verma',
+            role: 'Advisor cum consultant',
             img: 'https://placehold.co/344x384',
-            quote: '"Designing experiences that delight and inspire."',
+            quote: '"Ensures timely delivery and client satisfaction."',
           }].map((member, idx) => (
             <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
               {/* Image and name/role overlay */}
@@ -111,7 +114,7 @@ export default function About() {
             </div>
             <div className="flex-1">
               <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Agency Website Launch</h3>
-              <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter">We launched our official agency website, marking the beginning of our digital journey to empower businesses with innovative solutions.</p>
+              <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter"></p>Officially launched Codevia Crew and introduced our digital-first approach to helping businesses build their online presence.
             </div>
           </div>
         </div>
