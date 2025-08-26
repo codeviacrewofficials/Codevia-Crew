@@ -46,7 +46,7 @@ const teamMembers = [
   },
   {
     name: "Mohit Verma",
-    role: "Advisor cum consultant",
+    role: "UI/UX Researcher and Consultant",
     img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png",
     desc: "Ensures timely delivery and client satisfaction.",
   },

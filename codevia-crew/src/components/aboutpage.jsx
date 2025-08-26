@@ -77,7 +77,7 @@ export default function About() {
             quote: '"Specializes in scalable apps and full-stack solutions with modern tech."',
           }, {
             name: 'Mohit Verma',
-            role: 'Advisor cum consultant',
+            role: "UI/UX Researcher and Consultant",
             img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png',
             quote: '"Ensures timely delivery and client satisfaction."',
           }].map((member, idx) => (
