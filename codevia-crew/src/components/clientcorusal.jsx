@@ -5,7 +5,7 @@ import { Carousel } from "antd";
 const clients = [
   { src: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients/NeevBaalpanKi.jpg", alt: "Client 1" },
   { src: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients/Sleep%20Sounds.png", alt: "Client 2" },
-  { src: "https://placehold.co/96x96", alt: "Client 3" },
+  { src: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients/Gymcrm.png", alt: "Client 3" },
 ];
 
 export default function OurClientsCarousel() {

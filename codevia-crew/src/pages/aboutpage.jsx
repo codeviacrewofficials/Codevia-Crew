@@ -68,25 +68,25 @@ export default function About() {
           {[{
             name: 'Sohom Ghosh',
             role: 'UI/UX & Web Developer',
-            img: 'https://placehold.co/344x384',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Sohom.png',
             quote: '"Designs intuitive interfaces and builds responsive web experiences."',
           }, {
             name: 'Manas Raj',
             role: 'Full-Stack & App Developer',
-            img: 'https://placehold.co/344x384',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Manas.png',
             quote: '"Specializes in scalable apps and full-stack solutions with modern tech."',
           }, {
             name: 'Mohit Verma',
             role: 'Advisor cum consultant',
-            img: 'https://placehold.co/344x384',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Mohit.png',
             quote: '"Ensures timely delivery and client satisfaction."',
           }].map((member, idx) => (
             <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
               {/* Image and name/role overlay */}
               <img src={member.img} alt={member.name} className="w-full h-full object-cover rounded-lg" />
               <div className="absolute left-0 bottom-0 w-full h-20 bg-gradient-to-t from-black/80 to-transparent dark:from-black/80 dark:to-transparent rounded-b-lg flex flex-col justify-end p-4">
-                <span className="text-[#232B3A] dark:text-white text-lg font-bold font-inter">{member.name}</span>
-                <span className="text-[#4B5563] dark:text-[#D1D5DB] text-base font-inter">{member.role}</span>
+                <span className=" text-white text-lg font-bold font-inter">{member.name}</span>
+                <span className=" text-[#D1D5DB] text-base font-inter">{member.role}</span>
               </div>
               {/* Hover overlay with quote and icons */}
               <div className="absolute inset-0 bg-[#F3F4F6] dark:bg-[#2D3748] bg-opacity-95 rounded-lg flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -109,12 +109,12 @@ export default function About() {
           {/* Timeline Step */}
           <div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
             <div className="flex-shrink-0 flex flex-col items-center">
-              <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-xl font-bold font-inter mb-2">2025</div>
+              <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2025</div>
               <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">August</span>
             </div>
             <div className="flex-1">
               <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Agency Website Launch</h3>
-              <p className="text-[#4B5563] dark:text-[#A0AEC0] text-base font-inter"></p>Officially launched Codevia Crew and introduced our digital-first approach to helping businesses build their online presence.
+              <p className="text-[#3d434e] dark:text-[#A0AEC0] text-base font-inter">Officially launched Codevia Crew and introduced our digital-first approach to helping businesses build their online presence.</p>
             </div>
           </div>
         </div>
