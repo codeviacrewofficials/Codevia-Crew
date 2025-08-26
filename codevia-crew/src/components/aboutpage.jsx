@@ -67,18 +67,18 @@ export default function About() {
           {/* Team Member Card */}
           {[{
             name: 'Sohom Ghosh',
-            role: 'UI/UX & Web Developer',
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Sohom.png',
+            role: 'UI/UX & Full-Stack Web Developer',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/sohom.png',
             quote: '"Designs intuitive interfaces and builds responsive web experiences."',
           }, {
             name: 'Manas Raj',
             role: 'Full-Stack & App Developer',
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Manas.png',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/3.png',
             quote: '"Specializes in scalable apps and full-stack solutions with modern tech."',
           }, {
             name: 'Mohit Verma',
             role: 'Advisor cum consultant',
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Mohit.png',
+            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png',
             quote: '"Ensures timely delivery and client satisfaction."',
           }].map((member, idx) => (
             <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
