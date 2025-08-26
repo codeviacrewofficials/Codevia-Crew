@@ -34,7 +34,7 @@ export default function Navbar() {
                 }`}
             />
             <img
-              src="/images/Logo/logo_dark.png"
+              src="/images/Logo/logo_dark.svg"
               alt="Codevia Crew Logo"
               className={`w-full h-full object-contain absolute inset-0 transition-opacity duration-200 ${dark ? "opacity-100" : "opacity-0"
                 }`}
