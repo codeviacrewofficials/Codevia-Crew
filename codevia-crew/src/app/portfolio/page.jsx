@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { useTheme } from "../../components/ThemeProvider";
@@ -7,42 +8,46 @@ import "antd/dist/reset.css";
 // Portfolio data
 const portfolioProjects = [
   {
-    title: "E-commerce Platform for Locals",
-    desc: "A robust e-commerce platform connecting local artisans with a global market.",
-    img: "imgDepth7Frame0",
-    tags: ["E-commerce", "Web App", "Marketplace"],
+    title: "Play School Website",
+    desc: "A responsive school website with curriculum, admissions, events, and notices.",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/projects/Neevbaalpanki.png",
+    tags: ["School Website", "Play School"],
+    link: "https://www.neevbaalpanki.site/",
   },
   {
-    title: "Mobile App for Fitness Tracking",
-    desc: "A user-friendly mobile app for tracking fitness goals and progress for gym owners.",
-    img: "imgDepth7Frame1",
-    tags: ["Mobile App", "Fitness", "React Native"],
+    title: "Sleep Sounds & ASMR App",
+    desc: "A calming mobile app with ASMR sounds, sleep music, custom playlists, and sleep timer.",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/projects/sleepsounds.png",
+    tags: ["Mobile App", "ASMR", "Sleep Music"],
+    // no link => button will not show
   },
   {
-    title: "Website Redesign for a Non-Profit",
-    desc: "A modern and responsive website redesign for a non-profit organization.",
-    img: "imgDepth7Frame2",
-    tags: ["Website", "Non-Profit", "UI/UX"],
+    title: "Gym CRM System",
+    desc: "A CRM platform for gyms to manage members, subscriptions, trainers, and payments efficiently.",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/projects/Gymcrm.png",
+    tags: ["Web App", "CRM", "Gym Management"],
+    link: "https://gym-management-system-36fcf.web.app/dashboard",
   },
 ];
+
 
 const teamMembers = [
   {
     name: "Sohom Ghosh",
     role: "UI/UX & Web Developer",
-    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Sohom.jpeg",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Sohom.png",
     desc: "Designs intuitive interfaces and builds responsive web experiences.",
   },
   {
     name: "Manas Raj",
     role: "Full-Stack & App Developer",
-    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Manas.jpeg",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Manas.png",
     desc: "Specializes in scalable apps and full-stack solutions with modern tech.",
   },
   {
     name: "Mohit Verma",
     role: "Advisor cum consultant",
-    img: "imgDepth8Frame2",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Mohit.png",
     desc: "Ensures timely delivery and client satisfaction.",
   },
 ];
@@ -54,10 +59,23 @@ const testimonials = [
     img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients_profile/0.jpeg",
     text: "We highly recommend Codevia for web development. They created a beautiful and functional website for our play school that has received so much positive feedback from parents👌🏻👌🏻.",
   },
+   {
+    name: "Verified Client", // instead of Ethan Lee
+    date: "2025-08-22",
+    text: "The mobile app developed by Codevia Crew exceeded our expectations. It's user-friendly and has been a game-changer for our business.",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients/Sleep%20Sounds.png",
+  },
+  {
+    name: "Happy Customer",
+    date: "2025-05-10",
+    text: "Working with Codevia Crew has been fantastic! Their team delivered a professional and user-friendly website that perfectly represents our brand. Highly recommended!",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients/Gymcrm.png"
+  }
 ];
 
 export default function PortfolioPage() {
   const { dark } = useTheme();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className={`w-full min-h-screen flex flex-col bg-[#F9FAFB] dark:bg-[#1A202C]`}>
@@ -75,42 +93,151 @@ export default function PortfolioPage() {
 
         {/* Portfolio Projects Section */}
         <section className="w-full max-w-6xl mx-auto mt-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold font-inter text-center text-[#232B3A] dark:text-white mb-6">Featured Projects</h2>
+          <h2 className="text-2xl md:text-3xl font-bold font-inter text-center text-[#232B3A] dark:text-white mb-6">
+            Featured Projects
+          </h2>
           {/* Mobile Carousel */}
           <div className="block md:hidden">
-            <Carousel autoplay autoplaySpeed={5000} dots swipeToSlide draggable>
+            <Carousel
+              autoplay
+              autoplaySpeed={5000}
+              dots={{
+                className: "custom-dots",
+                dotStyle: { backgroundColor: "#3B82F6" },        // blue-500
+                activeDotStyle: { backgroundColor: "#2563EB" }   // blue-600
+              }}
+              swipeToSlide
+              draggable
+            >
               {portfolioProjects.map((proj, idx) => (
                 <div key={proj.title} className="px-2">
-                  <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs w-[320px] h-[420px] mx-auto flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
-                    <img src={proj.img} alt={proj.title} className="rounded-xl h-44 object-cover mb-4" />
-                    <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2">{proj.title}</h4>
-                    <p className="text-base text-black dark:text-[#9CA3AF] mb-3 font-medium">{proj.desc}</p>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="bg-white dark:bg-[#1F2937] rounded-lg p-8 min-w-[280px] max-w-xs w-[320px] h-[460px] mx-auto flex flex-col justify-between relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
+
+                    {/* Image */}
+                    <img
+                      src={proj.img}
+                      alt={proj.title}
+                      className="rounded-xl h-40 w-full object-cover mb-4 cursor-pointer"
+                      onClick={() => setSelectedImage(proj.img)}
+                    />
+
+                    {/* Title */}
+                    <h4 className="text-lg font-extrabold text-black dark:text-white mb-2 truncate">
+                      {proj.title}
+                    </h4>
+
+                    {/* Description */}
+                    <p className="text-sm text-black dark:text-[#9CA3AF] mb-3 font-medium line-clamp-3">
+                      {proj.desc}
+                    </p>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-3">
                       {proj.tags.map(tag => (
-                        <span key={tag} className="px-2 py-1 text-xs rounded bg-[#E5E7EB] dark:bg-[#232B3A] text-[#232B3A] dark:text-white">{tag}</span>
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs rounded bg-[#E5E7EB] dark:bg-[#232B3A] text-[#232B3A] dark:text-white truncate max-w-[100px]"
+                          title={tag}
+                        >
+                          {tag}
+                        </span>
                       ))}
                     </div>
+
+                    {/* View Project Link (Mobile) */}
+                    {proj.link && (
+                      <a
+                        href={proj.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#232B3A] text-white dark:bg-white dark:text-[#232B3A] hover:opacity-90 transition"
+                      >
+                        View Project
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
             </Carousel>
           </div>
+
+
           {/* Desktop Cards */}
           <div className="hidden md:flex gap-8 justify-center items-center">
             {portfolioProjects.map((proj, idx) => (
-              <div key={proj.title} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs w-[320px] h-[420px] flex flex-col relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
-                <img src={proj.img} alt={proj.title} className="rounded-xl h-44 object-cover mb-4" />
-                <h4 className="text-2xl font-extrabold text-black dark:text-white mb-2">{proj.title}</h4>
-                <p className="text-base text-black dark:text-[#9CA3AF] mb-3 font-medium">{proj.desc}</p>
-                <div className="flex flex-wrap gap-2">
+              <div
+                key={proj.title}
+                className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[320px] max-w-xs w-[320px] h-[460px] flex flex-col justify-between relative shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors"
+              >
+                {/* Image */}
+                <img
+                  src={proj.img}
+                  alt={proj.title}
+                  className="rounded-xl h-40 w-full object-cover mb-4 cursor-pointer"
+                  onClick={() => setSelectedImage(proj.img)}
+                />
+
+                {/* Title */}
+                <h4 className="text-xl font-extrabold text-black dark:text-white mb-2 truncate">
+                  {proj.title}
+                </h4>
+
+                {/* Description */}
+                <p className="text-base text-black dark:text-[#9CA3AF] mb-3 font-medium line-clamp-3">
+                  {proj.desc}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-3">
                   {proj.tags.map(tag => (
-                    <span key={tag} className="px-2 py-1 text-xs rounded bg-[#E5E7EB] dark:bg-[#232B3A] text-[#232B3A] dark:text-white">{tag}</span>
+                    <span
+                      key={tag}
+                      className="px-2 py-1 text-xs rounded bg-[#E5E7EB] dark:bg-[#232B3A] text-[#232B3A] dark:text-white truncate max-w-[100px]"
+                      title={tag}
+                    >
+                      {tag}
+                    </span>
                   ))}
                 </div>
+
+                {/* View Project Link (Desktop) */}
+                {proj.link && (
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-auto inline-block px-4 py-2 text-sm font-semibold rounded-lg bg-[#232B3A] text-white dark:bg-white dark:text-[#232B3A] hover:opacity-90 transition"
+                  >
+                    View Project
+                  </a>
+                )}
               </div>
             ))}
           </div>
+
+          {/* Fullscreen Image Modal */}
+          {selectedImage && (
+            <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+              <div className="relative max-w-2xl max-h-4xl mx-4 flex flex-col items-center justify-center">
+                <img
+                  src={selectedImage}
+                  alt="Full preview"
+                  className="w-auto rounded-lg shadow-lg mb-4"
+                />
+                <div className="w-full flex justify-end">
+                  <button
+                    className="px-6 py-2 bg-white text-black font-semibold rounded-lg shadow hover:bg-gray-200 transition"
+                    onClick={() => setSelectedImage(null)}
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          )}
         </section>
+
 
         {/* Team Section */}
         <section className="w-full max-w-6xl mx-auto mt-16">

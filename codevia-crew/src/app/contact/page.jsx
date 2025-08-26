@@ -99,14 +99,14 @@ export default function Contact() {
 
         <section className="w-full max-w-2xl bg-[#F3F4F6] dark:bg-[#232B3A] rounded-2xl shadow-lg p-8 mb-10">
           <h2 className="text-[#232B3A] dark:text-white text-xl font-bold font-inter mb-2">Contact Information</h2>
-          <div className="text-[#232B3A] dark:text-white text-base font-inter mb-2">
+          {/* <div className="text-[#232B3A] dark:text-white text-base font-inter mb-2">
             Innovatech Solutions<br />
             123 Innovation Drive<br />
             Tech City, CA 91234
-          </div>
+          </div> */}
           <div className="text-[#232B3A] dark:text-white text-base font-inter">
-            Email: contact@innovatech.com<br />
-            Phone: (555) 123-4567
+            Email: codeviacrewofficials@gmail.com<br />
+            {/* Phone: (555) 123-4567 */}
           </div>
         </section>
       </main>
