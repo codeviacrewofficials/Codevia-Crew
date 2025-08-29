@@ -72,18 +72,18 @@ export default function Footer() {
                         Follow Us
                     </div>
                     <div className="flex space-x-4">
-                        <Link href="https://instagram.com" target="_blank" className="text-[#9CA3AF] hover:text-pink-500">
+                        <Link href="https://www.instagram.com/codevia_crew?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" className="text-[#9CA3AF] hover:text-pink-500">
                             <Instagram size={20} />
                         </Link>
-                        <Link href="https://youtube.com" target="_blank" className="text-[#9CA3AF] hover:text-red-500">
+                        <Link href="https://www.youtube.com/@CodeviaCrew" target="_blank" className="text-[#9CA3AF] hover:text-red-500">
                             <Youtube size={20} />
                         </Link>
-                        <Link href="https://linkedin.com" target="_blank" className="text-[#9CA3AF] hover:text-blue-600">
+                        <Link href="https://in.linkedin.com/company/codevia-crew" target="_blank" className="text-[#9CA3AF] hover:text-blue-600">
                             <Linkedin size={20} />
                         </Link>
-                        <Link href="https://facebook.com" target="_blank" className="text-[#9CA3AF] hover:text-blue-500">
+                        {/* <Link href="https://facebook.com" target="_blank" className="text-[#9CA3AF] hover:text-blue-500">
                             <Facebook size={20} />
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>
