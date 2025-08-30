@@ -115,8 +115,8 @@ export default function About() {
           {/* Timeline Step */}
           <div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
             <div className="flex-shrink-0 flex flex-col items-center">
-              <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2025</div>
-              <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">August</span>
+              <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2024</div>
+              <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">December</span>
             </div>
             <div className="flex-1">
               <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Agency Website Launch</h3>
