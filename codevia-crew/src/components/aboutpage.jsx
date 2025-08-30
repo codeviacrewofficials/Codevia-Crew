@@ -14,7 +14,7 @@ export default function About() {
         </p>
       </section>
 
-    
+
 
       {/* Mission & Values Section */}
       <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-[#F3F4F6] dark:bg-[#2D3748]">
@@ -86,7 +86,7 @@ export default function About() {
             img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Ritwick.png",
             quote: '"Focused on crafting efficient, user-centric software solutions."',
           }
-        ].map((member, idx) => (
+          ].map((member, idx) => (
             <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
               {/* Image and name/role overlay */}
               <img src={member.img} alt={member.name} className="w-full h-full object-cover rounded-lg" />
@@ -108,12 +108,13 @@ export default function About() {
         </div>
       </section>
 
-        {/* Our Journey Section */}
+      {/* Our Journey Section */}
       <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-[#F3F4F6] dark:bg-[#2D3748]">
         <h2 className="text-[#232B3A] dark:text-white text-3xl font-bold font-inter mb-8">Our Journey</h2>
         <div className="w-full max-w-3xl flex flex-col gap-8 items-center">
           {/* Timeline Step */}
           {/* December 2024 - Agency Launch */}
+
 <div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
   <div className="flex-shrink-0 flex flex-col items-center">
     <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2024</div>
@@ -141,6 +142,8 @@ export default function About() {
   </div>
 </div>
 
+
+          
         </div>
       </section>
     </div>
