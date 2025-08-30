@@ -113,16 +113,34 @@ export default function About() {
         <h2 className="text-[#232B3A] dark:text-white text-3xl font-bold font-inter mb-8">Our Journey</h2>
         <div className="w-full max-w-3xl flex flex-col gap-8 items-center">
           {/* Timeline Step */}
-          <div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
-            <div className="flex-shrink-0 flex flex-col items-center">
-              <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2024</div>
-              <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">December</span>
-            </div>
-            <div className="flex-1">
-              <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Agency Website Launch</h3>
-              <p className="text-[#3d434e] dark:text-[#A0AEC0] text-base font-inter">Officially launched Codevia Crew and introduced our digital-first approach to helping businesses build their online presence.</p>
-            </div>
-          </div>
+          {/* December 2024 - Agency Launch */}
+<div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
+  <div className="flex-shrink-0 flex flex-col items-center">
+    <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2024</div>
+    <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">December</span>
+  </div>
+  <div className="flex-1">
+    <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Agency Launched</h3>
+    <p className="text-[#3d434e] dark:text-[#A0AEC0] text-base font-inter">
+      Codevia Crew was officially founded to bring modern digital solutions to businesses worldwide.
+    </p>
+  </div>
+</div>
+
+{/* August 2025 - Website Launch */}
+<div className="w-full flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A202C] rounded-lg p-6 shadow">
+  <div className="flex-shrink-0 flex flex-col items-center">
+    <div className="w-12 h-12 bg-[#1383EB] text-white flex items-center justify-center rounded-full text-l font-bold font-inter mb-2">2025</div>
+    <span className="text-[#4B5563] dark:text-[#A0AEC0] text-xs font-inter">August</span>
+  </div>
+  <div className="flex-1">
+    <h3 className="text-[#232B3A] dark:text-white text-lg font-bold font-inter mb-1">Website Launched</h3>
+    <p className="text-[#3d434e] dark:text-[#A0AEC0] text-base font-inter">
+      Launched the official Codevia Crew website to showcase our work, services, and digital-first approach.
+    </p>
+  </div>
+</div>
+
         </div>
       </section>
     </div>
