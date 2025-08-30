@@ -50,6 +50,12 @@ const teamMembers = [
     img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png",
     desc: "Ensures timely delivery and client satisfaction.",
   },
+  {
+    name: "Ritwick Raj Makhal",
+    role: "Full Stack Web and App Developer 🚀",
+    img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Ritwick.png", // replace with actual image link
+    desc: "Dynamic Software Engineer with 1+ year of open-source experience",
+  },
 ];
 
 const testimonials = [
