@@ -80,12 +80,18 @@ export default function About() {
             role: "UI/UX Researcher and Consultant",
             img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png',
             quote: '"Ensures timely delivery and client satisfaction."',
-          }].map((member, idx) => (
+          }, {
+            name: "Ritwick Raj Makhal",
+            role: "Full-Stack Web and App Developer 🚀",
+            img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Ritwick.png",
+            quote: '"Focused on crafting efficient, user-centric software solutions."',
+          }
+        ].map((member, idx) => (
             <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
               {/* Image and name/role overlay */}
               <img src={member.img} alt={member.name} className="w-full h-full object-cover rounded-lg" />
               <div className="absolute left-0 bottom-0 w-full h-20 bg-gradient-to-t from-black/80 to-transparent dark:from-black/80 dark:to-transparent rounded-b-lg flex flex-col justify-end p-4">
-                <span className=" text-white text-lg font-bold font-inter">{member.name}</span>
+                <span className=" text-[#c7d0dd] text-lg font-bold font-inter">{member.name}</span>
                 <span className=" text-[#D1D5DB] text-base font-inter">{member.role}</span>
               </div>
               {/* Hover overlay with quote and icons */}
