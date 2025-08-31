@@ -56,6 +56,13 @@ const teamMembers = [
     img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Ritwick.png", // replace with actual image link
     desc: "Dynamic Software Engineer with 1+ year of open-source experience",
   },
+  {
+    name: 'Rupam Bhakta',
+    role: 'MERN Stack Developer and AI Automation',
+    img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Rupam.png',
+    desc: 'Passionate about leveraging MERN and AI automation to deliver innovative solutions.',
+  },
+
 ];
 
 const testimonials = [
@@ -65,7 +72,7 @@ const testimonials = [
     img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Clients_profile/0.jpeg",
     text: "We highly recommend Codevia for web development. They created a beautiful and functional website for our play school that has received so much positive feedback from parents👌🏻👌🏻.",
   },
-   {
+  {
     name: "Verified Client", // instead of Ethan Lee
     date: "2025-08-22",
     text: "The mobile app developed by Codevia Crew exceeded our expectations. It's user-friendly and has been a game-changer for our business.",
@@ -269,20 +276,26 @@ export default function PortfolioPage() {
           </div>
 
           {/* Desktop Cards */}
-          <div className="hidden md:flex gap-8 justify-center">
+          <div className="hidden md:grid grid-cols-5 gap-4 justify-items-center">
             {teamMembers.map(member => (
-              <div key={member.name} className="bg-white dark:bg-[#1F2937] rounded-lg p-8 flex-1 min-w-[280px] max-w-xs flex flex-col items-center shadow-md border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors">
+              <div
+                key={member.name}
+                className="bg-white dark:bg-[#1F2937] rounded-lg p-6 flex flex-col items-center shadow-md 
+      border-b-2 border-[#232B3A] dark:border-[#E5E7EB] border-t border-l border-r transition-colors
+      w-56"
+              >
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="rounded-full w-28 h-28 object-cover mb-4"
+                  className="rounded-full w-24 h-24 object-cover mb-3"
                 />
-                <h4 className="text-xl font-bold text-black dark:text-white mb-1">{member.name}</h4>
-                <div className="text-[#4B5563] dark:text-[#A3ABB2] text-sm mb-2">{member.role}</div>
-                <p className="text-[#232B3A] dark:text-[#A3ABB2] text-center text-sm">{member.desc}</p>
+                <h4 className="text-lg font-bold text-black dark:text-white mb-1">{member.name}</h4>
+                <div className="text-[#4B5563] dark:text-[#A3ABB2] text-xs mb-2 text-center">{member.role}</div>
+                <p className="text-[#232B3A] dark:text-[#A3ABB2] text-center text-xs">{member.desc}</p>
               </div>
             ))}
           </div>
+
 
         </section>
 
