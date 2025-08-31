@@ -1,4 +1,5 @@
 "use client";
+import Team from "./team";
 
 export default function About() {
   return (
@@ -60,53 +61,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* Meet the Innovators Section */}
-      <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-white dark:bg-[#1A202C]">
-        <h2 className="text-[#232B3A] dark:text-white text-3xl font-bold font-inter mb-8">Meet the Innovators</h2>
-        <div className="w-full max-w-5xl flex flex-col md:flex-row gap-8 justify-center items-center">
-          {/* Team Member Card */}
-          {[{
-            name: 'Sohom Ghosh',
-            role: 'UI/UX & Full-Stack Web Developer',
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/sohom.png',
-            quote: '"Designs intuitive interfaces and builds responsive web experiences."',
-          }, {
-            name: 'Manas Raj',
-            role: 'Full-Stack & App Developer',
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/3.png',
-            quote: '"Specializes in scalable apps and full-stack solutions with modern tech."',
-          }, {
-            name: 'Mohit Verma',
-            role: "UI/UX Researcher and Consultant",
-            img: 'https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/2.png',
-            quote: '"Ensures timely delivery and client satisfaction."',
-          }, {
-            name: "Ritwick Raj Makhal",
-            role: "Full-Stack Web and App Developer 🚀",
-            img: "https://ylggebatniaxjserpzgk.supabase.co/storage/v1/object/public/Team/Ritwick.png",
-            quote: '"Focused on crafting efficient, user-centric software solutions."',
-          }
-          ].map((member, idx) => (
-            <div key={idx} className="relative group w-[344px] h-[384px] cursor-pointer">
-              {/* Image and name/role overlay */}
-              <img src={member.img} alt={member.name} className="w-full h-full object-cover rounded-lg" />
-              <div className="absolute left-0 bottom-0 w-full h-20 bg-gradient-to-t from-black/80 to-transparent dark:from-black/80 dark:to-transparent rounded-b-lg flex flex-col justify-end p-4">
-                <span className=" text-[#c7d0dd] text-lg font-bold font-inter">{member.name}</span>
-                <span className=" text-[#D1D5DB] text-base font-inter">{member.role}</span>
-              </div>
-              {/* Hover overlay with quote and icons */}
-              <div className="absolute inset-0 bg-[#F3F4F6] dark:bg-[#2D3748] bg-opacity-95 rounded-lg flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="text-[#4B5563] dark:text-[#A0AEC0] text-center text-base font-inter px-6 mb-6">{member.quote}</div>
-                <div className="flex gap-4">
-                  {/* Example icons, replace with real SVGs if needed */}
-                  <div className="w-6 h-6 bg-[#A0AEC0] rounded-full" />
-                  <div className="w-6 h-6 bg-[#A0AEC0] rounded-full" />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Team />
+
+
+
 
       {/* Our Journey Section */}
       <section className="w-full py-16 px-4 md:px-0 flex flex-col items-center bg-[#F3F4F6] dark:bg-[#2D3748]">
